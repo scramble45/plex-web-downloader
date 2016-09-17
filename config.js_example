@@ -1,26 +1,9 @@
-/*
-
-Chercher votre fichier de base de données plex, grace à ces indications:
-
-Windows Vista, Server 2008, Server 2008 R2, WHS 2011, Windows 7, Windows 8:
-C:\\Users\\yourusername\\AppData\\Local\\Plex Media Server\\Plug-in\ Support\\Databases\\com.plexapp.plugins.library.db
-
-Mac OS X:
-~/Library/Application Support/Plex Media Server/Plug-in Support/Databases/com.plexapp.plugins.library.db
-
-Windows XP, Server 2003, ou Home Server:
-C:\Documents and Settings\yourusername\Local Settings\Application Data\Plex Media Server\Plug-in Support\Databases\com.plexapp.plugins.library.db
-
-Docker
-/home/username/plex-config/Plex Media Server/Plug-in Support/Databases/com.plexapp.plugins.library.db
-*/
-
 module.exports = {
-    database: "/home/antoine/plex-config/Plex Media Server/Plug-in Support/Databases/com.plexapp.plugins.library.db",
+    database: "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Plug-in Support/Databases/com.$
     theme: "//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/darkly/bootstrap.css",
-    presentation: "<h1>Bienvenue sur mon serveur</h1><p>Merci de respecter mon upload...</p>",
-    //auth_user: "monUser",
-    //auth_password: "monPassword",
+    presentation: "<h1>Welcome to my server</h1><p>List of channels...</p>",
+    //auth_user: "admin",
+    //auth_password: "",
 
     init_db: function(){
       var sqlite3 = require('sqlite3').verbose();
