@@ -10,13 +10,13 @@ block content
   label Note
   p= movie.rating
 
-  label Télécharger
+  label Download
   br
   each file, i in movie.file
     a(href="/file/#{file.id}/#{file.filename}") #{file.size} #{file.filename}
     br
   br
-  label Résumé
+  label Summary
   p= movie.summary
   br
   br
@@ -27,7 +27,7 @@ block content
       | &nbsp;
   br
   br
-  label Acteurs
+  label Cast
   each tag, i in movie.tags_star
     if(tag!='')
       span= tag
