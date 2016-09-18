@@ -15,7 +15,7 @@ router.get('/:id', function(req, res, next) {
 
   function formatDuree(time) {
     if(typeof time !== 'undefined' && time != "" && time > 0){
-      var d = new Date(time); // js fonctionne en milisecondes
+      var d = new Date(time); // js time in milisecondes
       return addZero(d.getHours()-1) + "h "+ addZero(d.getMinutes()) + "m "+ addZero(d.getSeconds()) + "s ";
     }
     else {
@@ -23,7 +23,7 @@ router.get('/:id', function(req, res, next) {
     }
   }
 
-  //on fais toute les opération de base a la suite
+  //we do all the basic operation later
   db.serialize(function() {
 
     //db.run("CREATE TABLE if not exists user_info (info TEXT)");
@@ -47,9 +47,9 @@ router.get('/:id', function(req, res, next) {
 
         data.push(row);
     },
-    //aprés toute les opération de la base
+    //After All the basic operations
     function() {
-        res.render('channel', { title: 'Liste des vidéos',videos: data, channel: channel_info });
+        res.render('channel', { title: 'List of videos',videos: data, channel: channel_info });
     });
 
   });
