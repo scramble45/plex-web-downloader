@@ -12,7 +12,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-//protection par mot de passe
+// protect by a password
 if( typeof config.auth_user !== 'undefined' && typeof config.auth_password !== 'undefined' ){
   console.log("SAFE MODE: your server is protected by password.");
   var basicAuth = require('basic-auth');
