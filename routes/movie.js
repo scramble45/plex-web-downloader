@@ -41,7 +41,7 @@ router.get('/:id', function(req, res, next) {
 
       row.file.push(ligne);
     },function(){
-      res.render('movie', { title: 'Détail vidéo',movie: row });
+      res.render('movie', { title: 'Video Details',movie: row });
     });
 
   });
