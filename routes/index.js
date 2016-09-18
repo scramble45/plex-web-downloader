@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   var db = config.init_db();
 
   var data = [];
-  //on fais toute les opération de base a la suite
+
   db.serialize(function() {
 
     //db.run("CREATE TABLE if not exists user_info (info TEXT)");
@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
     + " FROM library_sections ORDER BY name ASC", function(err, row) {
       data.push(row);
     },
-    //aprés toute les opération de la base
+    
     function() {
         res.render('index', { title: '',channels: data, presentation: config.presentation });
     });
