@@ -3,7 +3,7 @@ var router = express.Router();
 
 function formatDuree(time) {
   if(typeof time !== 'undefined' && time != "" && time > 0){
-    var d = new Date(time); // js fonctionne en milisecondes
+    var d = new Date(time); // time milisecondes
     return addZero(d.getHours()-1) + "h "+ addZero(d.getMinutes()) + "m "+ addZero(d.getSeconds()) + "s ";
   }
   else {
@@ -21,14 +21,14 @@ router.get('/:id/:incoming_chan', function(req, res, next) {
   var db = config.init_db();
   var data = [];
 
-  //on fais toute les opération de base a la suite
+  //on fais any basic operation later
   db.serialize(function() {
 
     db.each("SELECT episode.id as id, episode.title as titre, episode.[index] as episode, episode.duration as second, season.[index] as saison, show.title as serie "+
     "FROM metadata_items episode,metadata_items season,metadata_items show "+
     "WHERE episode.parent_id=season.id AND season.parent_id = show.id AND show.id = ? ",req.params.id, function(err, row) {
 
-        /*//découpage des hints
+        /*// hints
         var params = {};
         var tab = row.hints.split('&');
         tab.forEach(function(val,index,table){
@@ -51,10 +51,10 @@ router.get('/:id/:incoming_chan', function(req, res, next) {
     });
 
     db.close(function(){
-        //aprés toute les opération de la base
-        var titre = "Série inexistante";
+        // after All the basic operation
+        var titre = "nonexistent series";
         if(data.length > 0){
-          titre = 'Episode de '+data[0].serie;
+          titre = 'Episode of '+data[0].serie;
         }
         res.render('show',{
           title: titre,
