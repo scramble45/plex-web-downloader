@@ -58,7 +58,7 @@ router.get('/', function(req, res, next) {
     },
     //After All the basic operations
     function() {*/
-        res.render('divers', { title: 'Various',/*channels: data,*/ presentation: config.presentation, uptime: secondsToString(process.uptime()) });
+        res.render('divers', { title: 'About',/*channels: data,*/ presentation: config.presentation, uptime: secondsToString(process.uptime()) });
     /*});
 
   });
