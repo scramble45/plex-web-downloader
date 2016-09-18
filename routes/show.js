@@ -47,7 +47,7 @@ router.get('/:id/:incoming_chan', function(req, res, next) {
         data.push(row);
     },
     function() {
-      //a la fin du foreach
+      // at the end of foreach
     });
 
     db.close(function(){
