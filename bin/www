@@ -1,5 +1,5 @@
 #!/usr/bin/env node
- //On commence par la mise en cluster
+ //We begin by clustering
  var cluster = require('cluster');
 
  // Code to run if we're in the master process
@@ -9,7 +9,7 @@
 
    // Create a worker for each CPU
    for (var i = 0; i < cpuCount; i += 1) {
-      console.log('Création du fork ' + i);
+      console.log('Created fork ' + i);
       cluster.fork();
    }
 
@@ -18,7 +18,7 @@
        // Replace the dead worker, we're not sentimental
        console.log('Worker ' + worker.id + ' died :(');
        cluster.fork();
-       console.log('Remplacement du worker ');
+       console.log('Replacement worker ');
    });
 
  // Code to run if we're in a worker process
