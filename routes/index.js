@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
     },
     //aprés toute les opération de la base
     function() {
-        res.render('index', { title: 'List of channels',channels: data, presentation: config.presentation });
+        res.render('index', { title: '',channels: data, presentation: config.presentation });
     });
 
   });
