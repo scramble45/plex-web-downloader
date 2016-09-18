@@ -8,7 +8,7 @@ router.get('/:id', function(req, res, next) {
 
   var shows = [];
 
-  //on fais toute les opération de base a la suite
+  // do all the basic operation later
   db.serialize(function() {
 
     db.each("SELECT id, title, year"
@@ -17,10 +17,10 @@ router.get('/:id', function(req, res, next) {
     ,req.params.id, function(err, row) {
       shows.push(row);
     },
-    //aprés toute les opération de la base
+    //Nearly all the basic operations
     function(){
         console.log(shows);
-        res.render('show_list', { title: 'Liste des séries',shows: shows, channel_id: req.params.id });
+        res.render('show_list', { title: 'List of series',shows: shows, channel_id: req.params.id });
     });
 
   });
