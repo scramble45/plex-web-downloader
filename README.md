@@ -9,7 +9,7 @@ INSTALLATION
 
 Then edit the configuration file to Provide the path to your db plex.
 
-Download the files, 'npm i' from the install directory then 'npm start'
+Download the files, `npm i` from the install directory then `npm start`
 
 Create your own systemd service to keep the service running / enable on startup
 
